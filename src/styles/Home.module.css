@@ -1,0 +1,20 @@
+.home {
+  padding: 2rem;
+  font-family: 'Georgia', serif;
+  background-color: #f9f7f1;
+  color: #2f4f4f;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 2rem;
+  color: #4b3e2f;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

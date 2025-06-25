@@ -1,0 +1,28 @@
+.profile {
+  padding: 2rem;
+  font-family: 'Georgia', serif;
+  background-color: #f9f7f1;
+  color: #2f4f4f;
+  text-align: center;
+}
+
+h2 {
+  color: #4b3e2f;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fffef8;
+  border: 2px solid #d6c9a1;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  font-size: 1.1rem;
+  margin: 0.8rem 0;
+  color: #3c2f1c;
+}

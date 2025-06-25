@@ -1,0 +1,54 @@
+.navbar {
+  background-color: #f4f1e1; /* fundo pergaminho */
+  padding: 1rem 2rem;
+  border-bottom: 3px solid #7a5c29; /* marrom antigo */
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2f4f4f; /* verde musgo */
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: #4b3e2f;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #b8860b; /* dourado queimado */
+}
+
+.greeting {
+  font-style: italic;
+  color: #2f4f4f;
+  margin-left: 1rem;
+}
+
+.logoutButton {
+  background-color: transparent;
+  border: 1px solid #7a5c29;
+  padding: 0.3rem 0.6rem;
+  font-family: 'Georgia', serif;
+  color: #4b3e2f;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #e6d6b8;
+}
