@@ -1,20 +1,25 @@
+/* Home.module.css */
+
 .home {
-  padding: 2rem;
-  font-family: 'Georgia', serif;
-  background-color: #f9f7f1;
-  color: #2f4f4f;
+  padding: 3rem 2rem;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   text-align: center;
 }
 
 .home h1 {
-  font-size: 2rem;
-  color: #4b3e2f;
+  font-size: 3rem;
+  color: var(--color-secondary);
+  text-shadow: 2px 2px 5px #a67c00;
   margin-bottom: 1rem;
 }
 
 .home p {
-  font-size: 1.1rem;
-  max-width: 600px;
+  font-size: 1.3rem;
+  max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.8;
+  font-style: italic;
+  color: #5a5a3c;
 }

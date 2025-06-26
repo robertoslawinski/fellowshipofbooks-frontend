@@ -1,15 +1,56 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+
+:root {
+  --color-bg: #f9f5e3;          /* pergaminho claro */
+  --color-text: #3b3a32;        /* marrom escuro */
+  --color-primary: #b28840;     /* dourado envelhecido */
+  --color-primary-hover: #d4af37; /* dourado brilhante */
+  --color-secondary: #425338;   /* verde musgo escuro */
+  --color-border: #7a6f4c;      /* marrom acastanhado */
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --font-main: 'Uncial Antiqua', Georgia, serif;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #f8f5ec;
-  font-family: 'IM Fell English', serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
   display: flex;
   justify-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+/* Links */
+a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Botões globais */
+button {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-bg);
+  font-family: var(--font-main);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 1px 1px 5px var(--color-shadow);
+}
+button:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: #fff;
 }

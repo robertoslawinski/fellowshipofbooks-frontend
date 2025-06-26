@@ -1,28 +1,32 @@
+/* Profile.module.css */
+
 .profile {
   padding: 2rem;
-  font-family: 'Georgia', serif;
-  background-color: #f9f7f1;
-  color: #2f4f4f;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   text-align: center;
 }
 
 h2 {
-  color: #4b3e2f;
+  color: var(--color-secondary);
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px #a67c00;
 }
 
 .card {
-  background-color: #fffef8;
-  border: 2px solid #d6c9a1;
-  border-radius: 10px;
+  background-color: #fff8dc;
+  border: 2px solid var(--color-primary);
+  border-radius: 12px;
   padding: 2rem;
   max-width: 500px;
   margin: 0 auto;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px var(--color-shadow);
 }
 
 .card p {
   font-size: 1.1rem;
-  margin: 0.8rem 0;
-  color: #3c2f1c;
+  margin: 1rem 0;
+  color: #4a442c;
+  font-style: italic;
 }

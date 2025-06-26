@@ -1,13 +1,15 @@
+/* MyBooks.module.css */
+
 .container {
   padding: 2rem;
-  font-family: 'Georgia', serif;
-  background-color: #f4f1e1;
-  color: #2f4f4f;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 h2 {
   text-align: center;
-  color: #4b3e2f;
+  color: var(--color-secondary);
   margin-bottom: 2rem;
 }
 
@@ -18,22 +20,25 @@ h2 {
 }
 
 .card {
-  background-color: #fffef9;
-  border: 1px solid #d3c6a3;
-  border-radius: 8px;
-  padding: 1rem;
+  background-color: #fff8dc;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 3px 3px 8px var(--color-shadow);
 }
 
 .card h3 {
-  color: #4b3e2f;
+  color: var(--color-secondary);
   margin-bottom: 0.5rem;
 }
 
 .card img {
   max-width: 100px;
   margin: 0.5rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  box-shadow: 2px 2px 6px var(--color-shadow);
 }
 
 .actions {
@@ -45,25 +50,25 @@ h2 {
 
 .link {
   text-decoration: none;
-  color: #2f4f4f;
-  font-weight: bold;
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 .link:hover {
-  color: #b8860b;
+  color: var(--color-primary);
 }
 
 button {
-  background-color: #7a5c29;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
   border: none;
-  padding: 0.4rem 0.6rem;
+  padding: 0.5rem 0.8rem;
   cursor: pointer;
-  font-family: 'Georgia', serif;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  font-family: var(--font-main);
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #b8860b;
+  background-color: var(--color-primary-hover);
 }

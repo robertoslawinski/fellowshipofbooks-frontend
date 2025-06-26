@@ -49,8 +49,21 @@ export function AuthProvider({ children }) {
     nav("/login");
   };
 
+  const updateUser = (updatedData) => {
+    setCurrentUser((prev) => ({ ...prev, ...updatedData }));
+  };
+
   return (
-    <AuthContext.Provider value={{ currentUser, login, signup, logout, isLoading }}>
+    <AuthContext.Provider
+      value={{
+        currentUser,
+        login,
+        signup,
+        logout,
+        isLoading,
+        updateUser, // novo valor disponível no contexto
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -1,54 +1,42 @@
-.navbar {
-  background-color: #f4f1e1; /* fundo pergaminho */
+/* Navbar.module.css */
+
+nav {
+  background: linear-gradient(90deg, #3a472f, #6b5e35);
   padding: 1rem 2rem;
-  border-bottom: 3px solid #7a5c29; /* marrom antigo */
-  font-family: 'Georgia', serif;
+  border-bottom: 2px solid var(--color-border);
+  box-shadow: 0 3px 6px var(--color-shadow);
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  color: var(--color-primary);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2f4f4f; /* verde musgo */
-  text-decoration: none;
-}
-
-.links {
-  display: flex;
+  justify-content: center;
   gap: 1rem;
-  align-items: center;
 }
 
-.links a {
+nav a {
+  color: var(--color-primary);
   text-decoration: none;
-  color: #4b3e2f;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.links a:hover {
-  color: #b8860b; /* dourado queimado */
-}
-
-.greeting {
-  font-style: italic;
-  color: #2f4f4f;
-  margin-left: 1rem;
-}
-
-.logoutButton {
-  background-color: transparent;
-  border: 1px solid #7a5c29;
   padding: 0.3rem 0.6rem;
-  font-family: 'Georgia', serif;
-  color: #4b3e2f;
-  cursor: pointer;
-  margin-left: 0.5rem;
-  transition: background-color 0.3s;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.logoutButton:hover {
-  background-color: #e6d6b8;
+nav a:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-bg);
+}
+
+nav button {
+  background: none;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-bg);
 }
