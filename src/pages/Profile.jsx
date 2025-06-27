@@ -24,6 +24,7 @@ const Profile = () => {
     }
 
     if (currentUser) {
+      setAvatar(currentUser.avatar || ""); // garante consistência após login
       fetchData();
     }
   }, [currentUser]);
@@ -39,8 +40,8 @@ const Profile = () => {
 
     try {
       const res = await api.post("/api/upload/avatar", formData);
-      setAvatar(res.data.avatar);
-      updateUser({ avatar: res.data.avatar }); // atualiza no contexto
+      setAvatar(res.data.avatar);              // atualiza local
+      updateUser({ avatar: res.data.avatar }); // atualiza no contexto global
     } catch (err) {
       console.error("Upload failed", err);
     }
