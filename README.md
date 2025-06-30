@@ -38,13 +38,6 @@ This Single Page Application (SPA) allows users to search for books, create a pe
 - Google Books API
 - Cloudinary (for image upload)
 
----
-
-## 📷 Screenshots
-
-| Home Page                                | Book Details + Threaded Comments          |
-|------------------------------------------|-------------------------------------------|
-| ![Home](./public/screenshots/home.png)   | ![Comments](./public/screenshots/comments.png) |
 
 ---
 
