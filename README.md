@@ -1,12 +1,57 @@
-# React + Vite
+# 🧝‍♂️ The Fellowship of Books – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **The Fellowship of Books**, a book club web app inspired by the world of *The Lord of the Rings*.  
+This Single Page Application (SPA) allows users to search for books, create a personalized collection, and engage with a themed community by posting and replying to comments.
 
-Currently, two official plugins are available:
+> ⚔️ Built with **React + Vite** and powered by a fully integrated MERN stack backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌍 [Visit the deployed app](https://fellowship-books.netlify.app)  
+🔧 Backend API: [https://fellowship-books.fly.dev](https://fellowship-books.fly.dev)
+
+---
+
+## 🎯 Project Highlights
+
+- 🧭 **Thematic experience**: Visuals and branding inspired by Tolkien’s Middle-earth.
+- 📚 **Search and add books**: Integrates with Google Books API.
+- 💬 **Comment & reply system**: Threaded discussion on each book.
+- 👤 **User accounts**: Signup, login, logout, and JWT-authenticated sessions.
+- 🖼️ **Profile customization**: Upload and display user avatars via Cloudinary.
+- 📖 **My Library**: Add/remove books from a personal collection.
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React + Vite
+- React Router
+- Context API (for Auth)
+- Axios
+- CSS Modules
+
+**External Services:**
+- Google Books API
+- Cloudinary (for image upload)
+
+---
+
+## 📷 Screenshots
+
+| Home Page                                | Book Details + Threaded Comments          |
+|------------------------------------------|-------------------------------------------|
+| ![Home](./public/screenshots/home.png)   | ![Comments](./public/screenshots/comments.png) |
+
+---
+
+## 📦 Getting Started Locally
+
+```bash
+git clone https://github.com/YOUR_USERNAME/fellowship-books-frontend.git
+cd fellowship-books-frontend
+npm install
+npm run dev
