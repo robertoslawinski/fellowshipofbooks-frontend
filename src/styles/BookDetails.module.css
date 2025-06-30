@@ -1,5 +1,3 @@
-/* BookDetails.module.css */
-
 .container {
   padding: 2rem;
   font-family: var(--font-main);
@@ -12,12 +10,22 @@
 
 .book {
   text-align: center;
-  background-color: #fcf8e8; /* tom de pergaminho mais claro */
+  background-color: #2f2a1d;
   padding: 1.5rem;
   border: 2px solid var(--color-primary);
   border-radius: 10px;
   margin-bottom: 2rem;
-  box-shadow: inset 0 0 5px #f4e4a1;
+  box-shadow: inset 0 0 6px #b8860b88;
+}
+
+.book h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.book p {
+  color: var(--color-text);
+  font-style: italic;
 }
 
 .book img {
@@ -29,14 +37,17 @@
 }
 
 .comments {
-  background-color: #f5f0d1;
+  background-color: #1e1a12;
   padding: 1rem;
   border-radius: 8px;
   border: 1px solid var(--color-border);
 }
 
 .commentForm textarea {
+  width: 100%;
   border: 1px solid var(--color-border);
+  background-color: #2a2619;
+  color: var(--color-text);
   padding: 0.6rem;
   font-family: var(--font-main);
   resize: vertical;
@@ -48,7 +59,6 @@
   color: var(--color-bg);
   border: none;
   padding: 0.5rem 1rem;
-  cursor: pointer;
   font-family: var(--font-main);
   border-radius: 6px;
   margin-top: 0.5rem;
@@ -60,12 +70,24 @@
 }
 
 .commentBox {
-  background-color: #fff9d6;
+  background-color: #2f2a1d;
   border: 1px solid var(--color-border);
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
   box-shadow: 0 2px 5px var(--color-shadow);
+  transition: margin-left 0.2s ease;
+}
+
+.commentBox p {
+  color: #e0d8c3;
+  margin: 0.5rem 0;
+}
+
+.commentActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .commentActions button {
@@ -75,10 +97,23 @@
   font-family: var(--font-main);
   cursor: pointer;
   border-radius: 4px;
-  margin-right: 0.3rem;
   transition: background-color 0.3s ease;
 }
 
 .commentActions button:hover {
   background-color: #b8860b;
+}
+
+.commentBox textarea {
+  width: 100%;
+  background-color: #1f1a13;
+  color: var(--color-text);
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.commentBox button {
+  margin-top: 0.4rem;
 }

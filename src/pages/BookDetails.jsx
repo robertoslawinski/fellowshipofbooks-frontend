@@ -11,6 +11,8 @@ const BookDetails = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const [editingComment, setEditingComment] = useState(null);
+  const [replyTo, setReplyTo] = useState(null);
+  const [replyText, setReplyText] = useState("");
 
   useEffect(() => {
     async function fetchBookAndComments() {
@@ -19,7 +21,7 @@ const BookDetails = () => {
         const found = resBooks.data.find((b) => b._id === bookId);
         setBook(found);
 
-        const resComments = await api.get(`/api/comments/${bookId}`);
+        const resComments = await api.get(`/api/comments/thread/${bookId}`);
         setComments(resComments.data);
       } catch (err) {
         console.error(err);
@@ -35,8 +37,27 @@ const BookDetails = () => {
 
     try {
       const res = await api.post(`/api/comments/${bookId}`, { text: newComment });
-      setComments([res.data, ...comments]);
+      const updated = await api.get(`/api/comments/thread/${bookId}`);
+      setComments(updated.data);
       setNewComment("");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleReplySubmit = async (e, parentId) => {
+    e.preventDefault();
+    if (!replyText.trim()) return;
+
+    try {
+      await api.post(`/api/comments/${bookId}`, {
+        text: replyText,
+        parentComment: parentId,
+      });
+      const res = await api.get(`/api/comments/thread/${bookId}`);
+      setComments(res.data);
+      setReplyText("");
+      setReplyTo(null);
     } catch (err) {
       console.error(err);
     }
@@ -45,7 +66,8 @@ const BookDetails = () => {
   const handleDelete = async (commentId) => {
     try {
       await api.delete(`/api/comments/${commentId}`);
-      setComments(comments.filter((c) => c._id !== commentId));
+      const res = await api.get(`/api/comments/thread/${bookId}`);
+      setComments(res.data);
     } catch (err) {
       console.error(err);
     }
@@ -54,12 +76,81 @@ const BookDetails = () => {
   const handleEdit = async (commentId) => {
     try {
       const res = await api.put(`/api/comments/${commentId}`, { text: editingComment.text });
-      setComments(comments.map((c) => (c._id === commentId ? res.data : c)));
+      const updated = await api.get(`/api/comments/thread/${bookId}`);
+      setComments(updated.data);
       setEditingComment(null);
     } catch (err) {
       console.error(err);
     }
   };
+
+  const renderComment = (comment, level = 0) => (
+    <div
+      key={comment._id}
+      className={styles.commentBox}
+      style={{ marginLeft: `${level * 20}px` }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
+        {comment.user.avatar && (
+          <img
+            src={comment.user.avatar}
+            alt={comment.user.username}
+            style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "1px solid #ccc"
+            }}
+          />
+        )}
+        <strong>{comment.user.username}</strong>
+      </div>
+
+      {editingComment?.id === comment._id ? (
+        <>
+          <textarea
+            value={editingComment.text}
+            onChange={(e) =>
+              setEditingComment({ ...editingComment, text: e.target.value })
+            }
+          />
+          <button onClick={() => handleEdit(comment._id)}>Save</button>
+        </>
+      ) : (
+        <p>{comment.text}</p>
+      )}
+
+      <div className={styles.commentActions}>
+        {currentUser && (
+          <button onClick={() => setReplyTo(comment._id)}>Reply</button>
+        )}
+
+        {currentUser?._id === comment.user._id && !editingComment && (
+          <>
+            <button onClick={() => setEditingComment({ id: comment._id, text: comment.text })}>Edit</button>
+            <button onClick={() => handleDelete(comment._id)}>Delete</button>
+          </>
+        )}
+      </div>
+
+      {replyTo === comment._id && (
+        <form
+          onSubmit={(e) => handleReplySubmit(e, comment._id)}
+          className={styles.commentForm}
+        >
+          <textarea
+            value={replyText}
+            onChange={(e) => setReplyText(e.target.value)}
+            rows="2"
+          />
+          <button type="submit">Send</button>
+        </form>
+      )}
+
+      {comment.replies && comment.replies.map((reply) => renderComment(reply, level + 1))}
+    </div>
+  );
 
   return (
     <div className={styles.container}>
@@ -93,30 +184,7 @@ const BookDetails = () => {
         {comments.length === 0 ? (
           <p>No comments yet.</p>
         ) : (
-          comments.map((comment) => (
-            <div key={comment._id} className={styles.commentBox}>
-              <p><strong>{comment.user.username}</strong>:</p>
-              {editingComment?.id === comment._id ? (
-                <>
-                  <textarea
-                    value={editingComment.text}
-                    onChange={(e) =>
-                      setEditingComment({ ...editingComment, text: e.target.value })
-                    }
-                  />
-                  <button onClick={() => handleEdit(comment._id)}>Save</button>
-                </>
-              ) : (
-                <p>{comment.text}</p>
-              )}
-              {currentUser?._id === comment.user._id && !editingComment && (
-                <div className={styles.commentActions}>
-                  <button onClick={() => setEditingComment({ id: comment._id, text: comment.text })}>Edit</button>
-                  <button onClick={() => handleDelete(comment._id)}>Delete</button>
-                </div>
-              )}
-            </div>
-          ))
+          comments.map((comment) => renderComment(comment))
         )}
       </div>
     </div>

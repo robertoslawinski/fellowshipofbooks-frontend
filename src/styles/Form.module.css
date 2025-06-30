@@ -1,0 +1,45 @@
+.formWrapper {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #2f2a1d;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  box-shadow: 0 0 12px var(--color-shadow);
+  font-family: var(--font-main);
+  color: var(--color-text);
+}
+
+.formWrapper h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 4px #b8860b;
+}
+
+.formWrapper input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  background-color: #1f1a13;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-main);
+}
+
+.formWrapper button {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formWrapper button:hover {
+  background-color: var(--color-primary-hover);
+}

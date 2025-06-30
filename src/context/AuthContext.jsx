@@ -61,7 +61,7 @@ export function AuthProvider({ children }) {
         signup,
         logout,
         isLoading,
-        updateUser, // novo valor disponível no contexto
+        updateUser,  
       }}
     >
       {children}

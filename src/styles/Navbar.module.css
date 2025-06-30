@@ -1,16 +1,17 @@
-/* Navbar.module.css */
-
 nav {
-  background: linear-gradient(90deg, #3a472f, #6b5e35);
+  background: linear-gradient(90deg, #2e2b1b, #3a3221);
   padding: 1rem 2rem;
   border-bottom: 2px solid var(--color-border);
   box-shadow: 0 3px 6px var(--color-shadow);
   font-family: var(--font-main);
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: var(--color-text);
   display: flex;
   justify-content: center;
   gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
@@ -26,14 +27,19 @@ nav a:hover {
   color: var(--color-bg);
 }
 
+nav span {
+  color: var(--color-text);
+  font-weight: bold;
+}
+
 nav button {
-  background: none;
+  background-color: transparent;
   border: 1px solid var(--color-primary);
   color: var(--color-primary);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav button:hover {

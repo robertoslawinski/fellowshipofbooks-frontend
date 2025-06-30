@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import styles from "../styles/Form.module.css";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -11,7 +12,7 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.formWrapper}>
       <h2>Login</h2>
       <input
         type="email"
@@ -25,7 +26,7 @@ const Login = () => {
         value={form.password}
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
-      <button type="submit">Login</button>
+      <button type="submit">Enter the Realm</button>
     </form>
   );
 };

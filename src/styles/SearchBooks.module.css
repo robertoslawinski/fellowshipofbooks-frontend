@@ -1,39 +1,46 @@
 .container {
   padding: 2rem;
-  font-family: 'Georgia', serif;
-  background-color: #f9f7f1;
-  color: #2f4f4f;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 h2 {
-  color: #4b3e2f;
+  color: var(--color-primary);
   margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 4px #b8860b;
 }
 
 .form {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  justify-content: center;
 }
 
 input {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid #7a5c29;
+  background-color: #2a2619;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
 }
 
 button {
-  background-color: #7a5c29;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
   border: none;
   padding: 0.5rem 1rem;
+  font-family: var(--font-main);
+  border-radius: 6px;
   cursor: pointer;
-  font-family: 'Georgia', serif;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #b8860b;
+  background-color: var(--color-primary-hover);
 }
 
 .results {
@@ -43,20 +50,33 @@ button:hover {
 }
 
 .card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   padding: 1rem;
-  background-color: #fffef9;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #2f2a1d;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   text-align: center;
   border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card h3 {
-  color: #4b3e2f;
+  color: var(--color-primary);
   margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-style: italic;
+  color: var(--color-text);
 }
 
 .card img {
   max-width: 100px;
   margin-top: 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px var(--color-shadow);
 }

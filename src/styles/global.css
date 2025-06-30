@@ -1,56 +1,57 @@
-/* index.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
-
 :root {
-  --color-bg: #f9f5e3;          /* pergaminho claro */
-  --color-text: #3b3a32;        /* marrom escuro */
-  --color-primary: #b28840;     /* dourado envelhecido */
-  --color-primary-hover: #d4af37; /* dourado brilhante */
-  --color-secondary: #425338;   /* verde musgo escuro */
-  --color-border: #7a6f4c;      /* marrom acastanhado */
-  --color-shadow: rgba(0, 0, 0, 0.15);
-  --font-main: 'Uncial Antiqua', Georgia, serif;
+  --color-bg: #1c1c1c;
+  --color-text: #e0d8c3;
+  --color-primary: #d4af37; /* ouro élfico */
+  --color-primary-hover: #b8860b;
+  --color-secondary: #7c6f42;
+  --color-border: #3a3a3a;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+  --font-main: 'Georgia', serif;
 }
 
-html, body {
+body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-main);
-  display: flex;
-  justify-content: center;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-/* Links */
+input,
+textarea,
+button {
+  font-family: var(--font-main);
+}
+
 a {
   color: var(--color-primary);
-  font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
+
 a:hover {
   color: var(--color-primary-hover);
 }
 
-/* Botões globais */
 button {
   background-color: var(--color-primary);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
   color: var(--color-bg);
-  font-family: var(--font-main);
+  border: none;
+  border-radius: 6px;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  box-shadow: 1px 1px 5px var(--color-shadow);
+  transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-  color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Georgia', serif;
+  color: var(--color-secondary);
+}
+
+img {
+  max-width: 100%;
 }

@@ -1,5 +1,3 @@
-/* Home.module.css */
-
 .home {
   padding: 3rem 2rem;
   font-family: var(--font-main);
@@ -10,16 +8,25 @@
 
 .home h1 {
   font-size: 3rem;
-  color: var(--color-secondary);
-  text-shadow: 2px 2px 5px #a67c00;
+  color: var(--color-primary);
+  text-shadow: 2px 2px 8px #a67c00;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .home p {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.8;
   font-style: italic;
-  color: #5a5a3c;
+  color: #c6c0a0;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.logo {
+  width: 190px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 8px gold);
 }
